@@ -37,9 +37,9 @@ def smtp_client(port=465, mailserver='smtp.gmail.com'):
     mailfromCommand = 'MAIL FROM: <mail@mail.com>\r\n'
     clientSocket.send(mailfromCommand.encode())
     recv2 = clientSocket.recv(1024).decode()
-    print(recv2)
-    if recv2[:3] != '250':
-        print('mail from 250 reply not received from server.')
+    # print(recv2)
+    # if recv2[:3] != '250':
+    #     print('mail from 250 reply not received from server.')
     # Fill in end
 
     # Send RCPT TO command and handle server response.
@@ -47,9 +47,9 @@ def smtp_client(port=465, mailserver='smtp.gmail.com'):
     rcpttoCommand = 'RCPT TO: <myemail@gmail.com>\r\n'
     clientSocket.send(rcpttoCommand.encode())
     recv3 = clientSocket.recv(1024).decode()
-    print(recv3)
-    if recv3[:3] != '250':
-        print('rcpt to 250 reply not received from server.')
+    # print(recv3)
+    # if recv3[:3] != '250':
+    #     print('rcpt to 250 reply not received from server.')
     # Fill in end
 
     # Send DATA command and handle server response.
@@ -58,9 +58,9 @@ def smtp_client(port=465, mailserver='smtp.gmail.com'):
     print(dataCommand)
     clientSocket.send(dataCommand.encode())
     recv4 = clientSocket.recv(1024).decode()
-    print(recv4)
-    if recv4[:3] != '250':
-        print('data 250 reply not received from server.')
+    # print(recv4)
+    # if recv4[:3] != '250':
+    #     print('data 250 reply not received from server.')
     # Fill in end
 
     # Send message data.
@@ -76,14 +76,14 @@ def smtp_client(port=465, mailserver='smtp.gmail.com'):
     # Send QUIT command and handle server response.
     # Fill in start
     quitCommand = 'Quit\r\n'
-    print(quitCommand)
+    # print(quitCommand)
     clientSocket.send(quitCommand.encode())
     recv5 = clientSocket.recv(1024).decode()
-    print(recv5)
-    if recv5[:3] != '250':
-        print('quit 250 reply not received from server.')
+    # print(recv5)
+    # if recv5[:3] != '250':
+    #     print('quit 250 reply not received from server.')
     # Fill in end
-
+    clientSocket.close()
 
 if __name__ == '__main__':
     smtp_client(465, 'smtp.gmail.com')
