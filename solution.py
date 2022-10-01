@@ -1,4 +1,3 @@
-from http import client
 from socket import *
 
 
@@ -44,7 +43,6 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     dataCommand = 'DATA\r\n'
     clientSocket.send(dataCommand.encode())
     recv4 = clientSocket.recv(1024).decode()
-    print(recv4)
     if recv[:3] != '250':
         print('data 250 reply not received from server.')
 
