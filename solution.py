@@ -33,6 +33,9 @@ def smtp_client(port=1025, mailserver='localhost'):
     # Fill in start
     data= 'DATA\r\n'
     clientSocket.send(data.encode())
+    recv = clientSocket.recv(1024).decode()
+    if recv[:3] != '250':
+        print('data 250 reply not received from server.')
     # Fill in end
 
     # Send message data.
