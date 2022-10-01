@@ -1,3 +1,4 @@
+from http import client
 from socket import *
 
 
@@ -40,7 +41,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Send DATA command and handle server response.
     # Fill in start
-    dataCommand = 'Data\r\n'
+    dataCommand = 'DATA\r\n'
     clientSocket.send(dataCommand.encode())
 
     # Send message data.
