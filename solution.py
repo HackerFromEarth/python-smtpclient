@@ -19,13 +19,13 @@ def smtp_client(port=1025, mailserver='localhost'):
 
     # Send MAIL FROM command and handle server response.
     # Fill in start
-    mailfrom = 'MAIL FROM: <test@gmail.com>\r\n'
+    mailfrom = 'MAIL FROM: <test@gmail.com>'
     clientSocket.send(mailfrom.encode())
     # Fill in end
 
     # Send RCPT TO command and handle server response.
     # Fill in start
-    rcptto = 'RCPT TO: <test2@gmail.com>\r\n'
+    rcptto = 'RCPT TO: <test2@gmail.com>'
     clientSocket.send(rcptto.encode())
     # Fill in end
 
